@@ -327,22 +327,6 @@ section { padding: 6rem 2rem; }
 
 .about-sidebar {}
 
-.about-photo-wrap {
-  position: relative; margin-bottom: 2rem;
-}
-
-.about-photo-placeholder {
-  width: 100%; aspect-ratio: 3/4;
-  background: var(--mist2);
-  border: 1px solid var(--border);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 0.75rem; color: var(--text-muted);
-  font-size: 0.85rem; letter-spacing: 0.05em;
-}
-
-.about-photo-placeholder svg { opacity: 0.35; }
-
 .about-accent {
   position: absolute; bottom: -12px; right: -12px;
   width: 80px; height: 80px;
@@ -842,7 +826,7 @@ footer a:hover { color: var(--gold); }
   .hamburger { display: flex; }
   section { padding: 4rem 1.25rem; }
   .about-sidebar { grid-template-columns: 1fr; }
-  .about-photo-placeholder { max-height: 260px; }
+
   .hero-right { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .resume-body { padding: 1.5rem; }
@@ -963,15 +947,6 @@ footer a:hover { color: var(--gold); }
   <div class="container">
     <div class="about-grid">
       <div class="about-sidebar reveal-left">
-        <div class="about-photo-wrap">
-          <div class="about-photo-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-            </svg>
-            <span style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;">Photo</span>
-          </div>
-          <div class="about-accent"></div>
-        </div>
         <div class="about-stats-grid">
           <div class="stat-cell"><div class="stat-n">3+</div><div class="stat-l">Dean's List Semesters</div></div>
           <div class="stat-cell"><div class="stat-n">5</div><div class="stat-l">Portfolio Pieces</div></div>
