@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Bianca Hilario — Communication Professional, Neurodiversity Advocate, Advertising & Marketing specialist graduating May 2026 from UConn Stamford."/>
+<meta property="og:title" content="Bianca Hilario | Communication Portfolio"/>
+<meta property="og:description" content="Autistic storyteller. Data analyst. Creative communicator."/>
+<meta name="theme-color" content="#B85C38"/>
+<title>Bianca Hilario | Communication Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --cream: #FAF8F3;
+  --ink: #1C1410;
+  --ink2: #2E2318;
+  --sienna: #B85C38;
+  --sienna-dark: #8A3E22;
+  --gold: #C9993A;
+  --gold-light: #F5E6C0;
+  --sage: #5E7A5E;
+  --mist: #EDE8DF;
+  --mist2: #E4DDD0;
+  --deep: #1C1410;
+  --surface: #FFFFFF;
+  --text-muted: #6B5A4A;
+  --border: rgba(184,92,56,0.15);
+  --scroll-bar: var(--sienna);
+  --shadow: 0 4px 24px rgba(28,20,16,0.08);
+  --shadow-lg: 0 16px 48px rgba(28,20,16,0.14);
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --nav-h: 68px;
+}
+
+[data-theme="dark"] {
+  --cream: #16120E;
+  --ink: #F5F0E8;
+  --ink2: #DDD5C8;
+  --mist: #2A221A;
+  --mist2: #352B20;
+  --surface: #201A14;
+  --text-muted: #9A8878;
+  --border: rgba(201,153,58,0.18);
+  --shadow: 0 4px 24px rgba(0,0,0,0.3);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.4);
+  --gold-light: #3A2D14;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* ── READING PROGRESS ── */
+#progress-bar {
+  position: fixed; top: 0; left: 0; height: 3px; z-index: 999;
+  background: linear-gradient(90deg, var(--sienna), var(--gold));
+  width: 0%; transition: width 0.1s linear;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 3px; left: 0; right: 0; z-index: 900;
+  height: var(--nav-h);
+  background: rgba(250,248,243,0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition), box-shadow var(--transition);
+}
+[data-theme="dark"] nav { background: rgba(22,18,14,0.92); }
+nav.scrolled { box-shadow: var(--shadow); }
+
+.nav-inner {
+  max-width: 1240px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 100%; padding: 0 2rem;
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 700;
+  color: var(--ink); text-decoration: none;
+  letter-spacing: -0.01em;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.nav-logo span { color: var(--sienna); }
+
+.nav-links { display: flex; gap: 0.25rem; list-style: none; align-items: center; }
+.nav-links a {
+  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted);
+  text-decoration: none; padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  transition: color var(--transition), background var(--transition);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--sienna); background: rgba(184,92,56,0.07); }
+
+.nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+
+.theme-btn {
+  background: none; border: 1px solid var(--border);
+  width: 36px; height: 36px; border-radius: 50%;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: 16px; transition: all var(--transition);
+  color: var(--ink);
+}
+.theme-btn:hover { background: var(--mist); }
+
+.nav-cta {
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--cream);
+  background: var(--sienna); border: none;
+  padding: 0.5rem 1.25rem; cursor: pointer;
+  text-decoration: none; border-radius: 4px;
+  transition: background var(--transition), transform var(--transition);
+}
+.nav-cta:hover { background: var(--sienna-dark); transform: translateY(-1px); }
+
+.hamburger {
+  display: none; flex-direction: column; gap: 4px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.hamburger span { width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s; }
+
+/* ── MOBILE MENU ── */
+.mobile-menu {
+  display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 850;
+  background: var(--cream); border-bottom: 1px solid var(--border);
+  padding: 1.5rem 2rem; flex-direction: column; gap: 1rem;
+  transform: translateY(-10px); opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.mobile-menu.open { display: flex; transform: translateY(0); opacity: 1; }
+.mobile-menu a {
+  font-size: 1rem; font-weight: 500; color: var(--ink);
+  text-decoration: none; padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-left.visible { opacity: 1; transform: none; }
+.reveal-right { opacity: 0; transform: translateX(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-right.visible { opacity: 1; transform: none; }
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding: calc(var(--nav-h) + 4rem) 2rem 5rem;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute; top: -20%; right: -10%;
+  width: 65%; height: 130%;
+  background: var(--mist);
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute; bottom: 10%; left: 5%;
+  width: 300px; height: 300px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.hero-accent-circle {
+  position: absolute; top: 15%; right: 18%;
+  width: 120px; height: 120px;
+  border: 1px solid rgba(184,92,56,0.2);
+  border-radius: 50%;
+  animation: spin-slow 20s linear infinite;
+}
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+
+.hero-content {
+  max-width: 1240px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem;
+  align-items: center; position: relative; z-index: 1;
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--sienna);
+  margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block; width: 32px; height: 1px;
+  background: var(--sienna);
+}
+
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 700; line-height: 0.95;
+  letter-spacing: -0.02em; margin-bottom: 1.75rem;
+}
+.hero-name .line2 { color: var(--sienna); display: block; }
+.hero-name .line3 {
+  font-style: italic; font-weight: 400;
+  font-size: 0.6em; color: var(--text-muted);
+  display: block; margin-top: 0.25rem;
+  letter-spacing: 0;
+}
+
+.hero-desc {
+  font-size: 1.05rem; line-height: 1.85;
+  color: var(--text-muted); max-width: 44ch;
+  margin-bottom: 2.5rem;
+}
+
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn-primary {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--cream);
+  background: var(--ink); border: 1.5px solid var(--ink);
+  padding: 0.9rem 2rem; cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-primary:hover { background: var(--sienna); border-color: var(--sienna); transform: translateY(-2px); }
+
+.btn-ghost {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink);
+  background: transparent; border: 1.5px solid var(--ink2);
+  padding: 0.9rem 2rem; cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-ghost:hover { background: var(--ink); color: var(--cream); transform: translateY(-2px); }
+
+.hero-right { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.hero-card {
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  display: flex; align-items: flex-start; gap: 1rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.hero-card:hover { transform: translateX(4px); box-shadow: var(--shadow); }
+
+.hero-card-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: var(--gold-light); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+}
+.hero-card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--sienna);
+  margin-bottom: 0.2rem;
+}
+.hero-card-val { font-size: 0.9rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
+
+/* ── SECTION COMMONS ── */
+section { padding: 6rem 2rem; }
+.container { max-width: 1240px; margin: 0 auto; }
+
+.section-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--sienna);
+  margin-bottom: 0.75rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.section-eyebrow::before {
+  content: '';
+  display: inline-block; width: 24px; height: 1px;
+  background: var(--sienna);
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.1; margin-bottom: 1rem;
+}
+
+.section-sub {
+  font-size: 1rem; color: var(--text-muted); line-height: 1.8;
+  max-width: 58ch; margin-bottom: 3.5rem;
+}
+
+.rule { width: 48px; height: 2px; background: var(--sienna); margin: 1.25rem 0 2rem; }
+
+/* ── ABOUT ── */
+.about-section { background: var(--mist); }
+
+.about-grid {
+  display: grid; grid-template-columns: 340px 1fr; gap: 5rem; align-items: start;
+}
+
+.about-sidebar {}
+
+.about-photo-wrap {
+  position: relative; margin-bottom: 2rem;
+}
+
+.about-photo-placeholder {
+  width: 100%; aspect-ratio: 3/4;
+  background: var(--mist2);
+  border: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.75rem; color: var(--text-muted);
+  font-size: 0.85rem; letter-spacing: 0.05em;
+}
+
+.about-photo-placeholder svg { opacity: 0.35; }
+
+.about-accent {
+  position: absolute; bottom: -12px; right: -12px;
+  width: 80px; height: 80px;
+  border: 2px solid var(--sienna); opacity: 0.4;
+}
+
+.about-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin-top: 2rem; }
+
+.stat-cell {
+  background: var(--surface); padding: 1.25rem;
+  text-align: center;
+}
+.stat-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem; font-weight: 700;
+  color: var(--sienna); line-height: 1;
+}
+.stat-l { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; line-height: 1.4; }
+
+.about-text { font-size: 1rem; line-height: 1.9; color: var(--ink2); }
+.about-text p { margin-bottom: 1.25rem; }
+
+.pull-quote {
+  border-left: 3px solid var(--gold);
+  padding: 1.1rem 1.5rem;
+  background: var(--gold-light);
+  margin: 2rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-size: 1.2rem;
+  color: var(--ink); line-height: 1.6;
+}
+
+/* ── SKILLS ── */
+.skills-section { background: var(--cream); }
+
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
+
+.skill-group {}
+.skill-group-title {
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--sienna);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+}
+
+.skill-bar { margin-bottom: 1rem; }
+.skill-name {
+  display: flex; justify-content: space-between;
+  font-size: 0.88rem; font-weight: 500;
+  color: var(--ink); margin-bottom: 0.4rem;
+}
+.skill-pct { color: var(--text-muted); font-size: 0.78rem; }
+.skill-track {
+  height: 4px; background: var(--mist2);
+  overflow: hidden;
+}
+.skill-fill {
+  height: 100%; background: var(--sienna);
+  width: 0%; transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+.skill-fill.gold { background: var(--gold); }
+.skill-fill.sage { background: var(--sage); }
+
+/* ── STATEMENT ── */
+.statement-section { background: var(--ink); color: var(--cream); padding: 7rem 2rem; }
+
+.statement-inner { max-width: 900px; margin: 0 auto; }
+
+.statement-quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 8rem; line-height: 0.6;
+  color: rgba(184,92,56,0.4); margin-bottom: 1rem;
+  display: block;
+}
+
+.statement-body {
+  font-size: 1.12rem; line-height: 1.95; color: rgba(245,240,232,0.9);
+}
+.statement-body p { margin-bottom: 1.5rem; }
+.statement-body .highlight {
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-size: 1.25rem;
+}
+
+/* ── PORTFOLIO ── */
+.portfolio-section { background: var(--mist); }
+
+.portfolio-filter {
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+.filter-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-muted);
+  background: transparent; border: 1px solid var(--border);
+  padding: 0.45rem 1rem; cursor: pointer;
+  border-radius: 100px;
+  transition: all var(--transition);
+}
+.filter-btn:hover, .filter-btn.active {
+  background: var(--sienna); color: var(--cream);
+  border-color: var(--sienna);
+}
+
+.portfolio-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; }
+
+.p-card {
+  background: var(--surface); border: 1px solid var(--border);
+  overflow: hidden; cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex; flex-direction: column;
+}
+.p-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+
+.p-card.span-7 { grid-column: span 7; }
+.p-card.span-5 { grid-column: span 5; }
+.p-card.span-4 { grid-column: span 4; }
+.p-card.span-8 { grid-column: span 8; }
+.p-card.span-12 { grid-column: span 12; }
+
+.card-color-bar { height: 5px; }
+.bar-1 { background: linear-gradient(90deg, var(--sienna), #D4866A); }
+.bar-2 { background: linear-gradient(90deg, var(--gold), #E8BC5A); }
+.bar-3 { background: linear-gradient(90deg, var(--sage), #7EA07E); }
+.bar-4 { background: linear-gradient(90deg, var(--ink2), #5A4535); }
+.bar-5 { background: linear-gradient(90deg, #7C5CBF, #A08CD0); }
+
+.card-inner { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+
+.card-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--sienna);
+  margin-bottom: 0.75rem;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem; font-weight: 700;
+  line-height: 1.25; margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.card-context {
+  font-size: 0.8rem; color: var(--sage);
+  font-weight: 500; margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.card-desc {
+  font-size: 0.92rem; line-height: 1.75;
+  color: var(--text-muted); flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem; letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--mist); color: var(--text-muted);
+  padding: 0.25rem 0.65rem; border-radius: 100px;
+  border: 1px solid var(--border);
+}
+
+.card-arrow {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.78rem; font-weight: 500; color: var(--sienna);
+  margin-top: 1rem; letter-spacing: 0.06em;
+  transition: gap var(--transition);
+}
+.p-card:hover .card-arrow { gap: 0.65rem; }
+
+/* ── POEM ── */
+.poem-section { background: var(--deep); color: var(--cream); }
+
+.poem-header {
+  text-align: center; max-width: 650px; margin: 0 auto 4rem;
+}
+
+.poem-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+  align-items: start; max-width: 1100px; margin: 0 auto;
+}
+
+.poem-context { color: rgba(245,240,232,0.7); font-size: 0.95rem; line-height: 1.85; }
+.poem-context p { margin-bottom: 1rem; }
+
+.poem-note {
+  margin-top: 2rem; padding: 1rem 1.25rem;
+  border: 1px solid rgba(201,153,58,0.3);
+  background: rgba(201,153,58,0.06);
+  font-size: 0.85rem; color: rgba(245,240,232,0.6);
+  font-style: italic; line-height: 1.7;
+}
+
+.poem-book {
+  border-left: 2px solid var(--gold);
+  padding-left: 2rem;
+}
+
+.poem-book-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem; font-style: italic; color: var(--gold);
+  margin-bottom: 2rem;
+}
+
+.stanza {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; line-height: 2.1;
+  color: rgba(245,240,232,0.88);
+  margin-bottom: 1.75rem;
+}
+
+.poem-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem; letter-spacing: 0.14em;
+  color: var(--gold); text-transform: uppercase;
+  margin-top: 2rem;
+}
+
+/* ── RESUME ── */
+.resume-section { background: var(--cream); }
+
+.resume-wrap {
+  max-width: 860px; margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+}
+
+.resume-hd {
+  background: var(--ink); color: var(--cream);
+  padding: 3rem; text-align: center;
+  position: relative; overflow: hidden;
+}
+.resume-hd::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--sienna), var(--gold));
+}
+
+.resume-hd-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 700; letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.resume-hd-contact {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem; letter-spacing: 0.1em;
+  color: rgba(245,240,232,0.6); margin-bottom: 0.4rem;
+}
+
+.resume-hd-contact a { color: rgba(245,240,232,0.6); text-decoration: none; }
+.resume-hd-contact a:hover { color: var(--gold); }
+
+.resume-tagline {
+  font-size: 0.85rem; color: var(--gold);
+  margin-top: 0.75rem; letter-spacing: 0.08em;
+}
+
+.resume-body { padding: 2.5rem 3rem; }
+
+.r-section { margin-bottom: 2rem; }
+
+.r-head {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--sienna);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem; margin-bottom: 1.1rem;
+}
+
+.r-item { margin-bottom: 1.1rem; }
+.r-title { font-weight: 600; font-size: 0.95rem; display: flex; justify-content: space-between; align-items: baseline; }
+.r-year { font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; color: var(--sienna); font-weight: 400; }
+.r-sub { font-size: 0.85rem; color: var(--text-muted); margin: 0.15rem 0; }
+.r-detail { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; }
+
+.r-comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem 1.5rem; }
+.r-comp-item { font-size: 0.83rem; color: var(--text-muted); padding: 0.3rem 0; border-bottom: 1px dashed var(--border); }
+
+.r-proj { padding-bottom: 0.85rem; margin-bottom: 0.85rem; border-bottom: 1px dashed var(--border); }
+.r-proj:last-child { border-bottom: none; }
+.r-proj-name { font-weight: 600; font-size: 0.9rem; display: flex; justify-content: space-between; }
+.r-proj-detail { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.25rem; }
+
+.download-wrap { text-align: center; margin-top: 2.5rem; }
+
+/* ── TESTIMONIALS ── */
+.testimonials-section { background: var(--mist); }
+
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+.testi-card {
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 2rem; position: relative;
+}
+
+.testi-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem; line-height: 0.8;
+  color: var(--sienna); opacity: 0.3;
+  margin-bottom: 1rem; display: block;
+}
+
+.testi-text {
+  font-size: 0.95rem; line-height: 1.8;
+  color: var(--text-muted); margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testi-author {
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.testi-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--gold-light);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 0.85rem; color: var(--sienna);
+  flex-shrink: 0;
+}
+.testi-name { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
+.testi-role { font-size: 0.78rem; color: var(--text-muted); }
+
+/* ── AWARDS & CREDS ── */
+.awards-section { background: var(--cream); }
+
+.awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+
+.award-card {
+  border: 1px solid var(--border); padding: 1.75rem;
+  text-align: center;
+  transition: transform var(--transition), border-color var(--transition);
+}
+.award-card:hover { transform: translateY(-4px); border-color: var(--sienna); }
+
+.award-icon { font-size: 28px; margin-bottom: 1rem; display: block; }
+.award-title { font-weight: 600; font-size: 0.92rem; color: var(--ink); margin-bottom: 0.35rem; }
+.award-org { font-size: 0.78rem; color: var(--sienna); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.award-year { font-size: 0.75rem; color: var(--text-muted); }
+
+/* ── CONTACT ── */
+.contact-section { background: var(--sienna); color: var(--cream); }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+
+.contact-left {}
+.contact-left .section-eyebrow { color: rgba(245,240,232,0.6); }
+.contact-left .section-eyebrow::before { background: rgba(245,240,232,0.4); }
+.contact-left .section-title { color: white; }
+.contact-left .section-sub { color: rgba(245,240,232,0.75); max-width: 40ch; margin-bottom: 2rem; }
+
+.contact-links { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+.contact-link {
+  display: flex; align-items: center; gap: 1rem;
+  color: rgba(245,240,232,0.9); text-decoration: none;
+  padding: 1rem 1.25rem; background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: all var(--transition);
+}
+.contact-link:hover { background: rgba(255,255,255,0.15); transform: translateX(4px); }
+.contact-link-icon { font-size: 18px; flex-shrink: 0; }
+.contact-link-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.5); }
+.contact-link-val { font-size: 0.9rem; font-weight: 500; }
+
+.contact-right {}
+
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,240,232,0.6); }
+.form-input, .form-textarea {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
+  color: var(--cream); padding: 0.75rem 1rem;
+  font-family: 'Jost', sans-serif; font-size: 0.9rem;
+  outline: none; transition: border-color var(--transition);
+  resize: none;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(245,240,232,0.35); }
+.form-input:focus, .form-textarea:focus { border-color: var(--gold); }
+
+.form-textarea { min-height: 130px; }
+
+.form-submit {
+  background: var(--cream); color: var(--sienna);
+  border: none; padding: 0.9rem 2rem;
+  font-family: 'Jost', sans-serif; font-size: 0.82rem;
+  font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  cursor: pointer; transition: all var(--transition);
+  align-self: flex-start;
+}
+.form-submit:hover { background: var(--gold); transform: translateY(-2px); }
+
+.form-success {
+  display: none; text-align: center; padding: 2rem;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(245,240,232,0.9); font-size: 0.95rem; line-height: 1.7;
+}
+
+/* ── LANG STRIP ── */
+.lang-strip {
+  background: var(--ink2); padding: 2.5rem 2rem;
+  text-align: center;
+}
+.lang-strip-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(245,240,232,0.35);
+  margin-bottom: 1.25rem;
+}
+.lang-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }
+.lang-badge {
+  font-size: 0.8rem; color: rgba(245,240,232,0.6);
+  border: 1px solid rgba(245,240,232,0.12);
+  padding: 0.3rem 0.85rem; border-radius: 100px;
+  transition: all var(--transition);
+}
+.lang-badge:hover { color: var(--gold); border-color: rgba(201,153,58,0.4); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--deep); color: rgba(245,240,232,0.35);
+  text-align: center; padding: 2rem;
+  font-size: 0.78rem; letter-spacing: 0.05em; line-height: 1.8;
+}
+footer a { color: rgba(245,240,232,0.5); text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+/* ── BACK TO TOP ── */
+#back-to-top {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 800;
+  width: 44px; height: 44px;
+  background: var(--sienna); color: var(--cream);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; opacity: 0; transform: translateY(10px);
+  transition: all var(--transition); border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+#back-to-top.visible { opacity: 1; transform: none; }
+#back-to-top:hover { background: var(--sienna-dark); transform: translateY(-3px); }
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 999;
+  background: rgba(28,20,16,0.92);
+  align-items: center; justify-content: center;
+  padding: 2rem;
+}
+.lightbox.open { display: flex; }
+.lightbox-inner {
+  background: var(--surface); max-width: 750px; width: 100%;
+  max-height: 90vh; overflow-y: auto;
+  padding: 3rem; position: relative;
+}
+.lightbox-close {
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  background: none; border: none; font-size: 1.5rem;
+  cursor: pointer; color: var(--text-muted); line-height: 1;
+}
+.lightbox-close:hover { color: var(--sienna); }
+
+/* ── ANIMATIONS ── */
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+@keyframes pulse-ring { 0%{transform:scale(1);opacity:0.4} 70%{transform:scale(1.15);opacity:0} 100%{transform:scale(1.15);opacity:0} }
+
+.pulse {
+  position: relative; display: inline-block;
+}
+.pulse::after {
+  content: '';
+  position: absolute; inset: -4px;
+  border-radius: 50%; border: 2px solid var(--sienna);
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-sidebar { display: grid; grid-template-columns: 250px 1fr; gap: 2rem; align-items: start; }
+  .about-stats-grid { margin-top: 0; }
+  .poem-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .p-card.span-7, .p-card.span-5, .p-card.span-4, .p-card.span-8 { grid-column: span 12; }
+  .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-right { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+}
+
+@media(max-width:768px){
+  :root { --nav-h: 60px; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  section { padding: 4rem 1.25rem; }
+  .about-sidebar { grid-template-columns: 1fr; }
+  .about-photo-placeholder { max-height: 260px; }
+  .hero-right { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .resume-body { padding: 1.5rem; }
+  .r-comp-grid { grid-template-columns: 1fr; }
+  .portfolio-grid { display: flex; flex-direction: column; }
+}
+
+@media print {
+  nav, #progress-bar, #back-to-top, .hero-bg::before,
+  .hero-bg::after, .hero-accent-circle, .hamburger { display: none !important; }
+  section { padding: 2rem 1rem !important; }
+  .hero { min-height: auto !important; padding-top: 1rem !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Reading Progress -->
+<div id="progress-bar"></div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">Bianca <span>Hilario</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#statement">Statement</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#poem">Poem</a></li>
+      <li><a href="#resume">Résumé</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+  <a href="#statement" onclick="closeMobileMenu()">Statement</a>
+  <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
+  <a href="#poem" onclick="closeMobileMenu()">Poem</a>
+  <a href="#resume" onclick="closeMobileMenu()">Résumé</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home" aria-label="Introduction">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-accent-circle"></div>
+  </div>
+  <div class="hero-content">
+    <div>
+      <p class="hero-eyebrow reveal">Communication Portfolio · Class of 2026</p>
+      <h1 class="hero-name reveal delay-1">
+        Bianca<br/>
+        <span class="line2">Hilario</span>
+        <span class="line3">Communication Professional</span>
+      </h1>
+      <p class="hero-desc reveal delay-2">
+        Autistic storyteller. Data analyst. Creative communicator. I translate neurodivergent perspective into rigorous scholarship, meaningful design, and campaigns that move people.
+      </p>
+      <div class="hero-btns reveal delay-3">
+        <a href="#portfolio" class="btn-primary">View My Work →</a>
+        <a href="#resume" class="btn-ghost">Download Résumé</a>
+      </div>
+    </div>
+    <div class="hero-right reveal-right delay-2">
+      <div class="hero-card">
+        <div class="hero-card-icon">🎓</div>
+        <div>
+          <div class="hero-card-label">Education</div>
+          <div class="hero-card-val">B.A. Communication<br/>UConn Stamford · May 2026</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🏆</div>
+        <div>
+          <div class="hero-card-label">Academic Honor</div>
+          <div class="hero-card-val">Dean's List · Multiple Semesters</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">📜</div>
+        <div>
+          <div class="hero-card-label">Conference</div>
+          <div class="hero-card-val">ECA Undergraduate Conference<br/>Pittsburgh, PA · April 2026</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">💡</div>
+        <div>
+          <div class="hero-card-label">Scholarship</div>
+          <div class="hero-card-val">New Haven Promise<br/>Full 4-Year Merit Award</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">⭐</div>
+        <div>
+          <div class="hero-card-label">Goal</div>
+          <div class="hero-card-val">Advertising & Marketing<br/>Neurodiversity-Forward Teams</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about" aria-label="About me">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-sidebar reveal-left">
+        <div class="about-photo-wrap">
+          <div class="about-photo-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;">Photo</span>
+          </div>
+          <div class="about-accent"></div>
+        </div>
+        <div class="about-stats-grid">
+          <div class="stat-cell"><div class="stat-n">3+</div><div class="stat-l">Dean's List Semesters</div></div>
+          <div class="stat-cell"><div class="stat-n">5</div><div class="stat-l">Portfolio Pieces</div></div>
+          <div class="stat-cell"><div class="stat-n">4yr</div><div class="stat-l">Full Scholarship</div></div>
+          <div class="stat-cell"><div class="stat-n">∞</div><div class="stat-l">Neurodivergent Drive</div></div>
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <p class="section-eyebrow">My Story</p>
+        <h2 class="section-title">A Different Brain.<br/>A Distinct Voice.</h2>
+        <div class="rule"></div>
+        <p>As an autistic senior graduating with a B.A. in Communication in May 2026, my academic journey has been one of persistence, growth, and self-discovery. College challenged me not only academically but personally—I had to find methods to succeed in an environment not always designed for the way my brain works.</p>
+        <div class="pull-quote">
+          "Social and verbal spontaneity never came easily. So I prepared thoroughly—index cards, structured thoughts, deliberate words. What started as a survival mechanism became my greatest competitive advantage."
+        </div>
+        <p>That deliberateness now defines everything I produce. Whether it's a qualitative framing analysis, an interactive digital narrative, or an original advertising campaign—every piece is crafted with accuracy, intentionality, and structural attention to detail.</p>
+        <p>I have been placed on the Dean's List multiple semesters, received the New Haven Promise full four-year scholarship, been inducted into Lambda Pi Eta Communications Honor Society, and had my research selected for presentation at the Eastern Communication Association undergraduate conference in April 2026.</p>
+        <p>Outside academics, I mentor neurodivergent teens, fundraise for families in the Philippines, and perform as a flutist and keyboardist in the All City Honors Band. My goal is a career in advertising or marketing communications at organizations that genuinely value cognitive diversity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills" aria-label="Skills and competencies">
+  <div class="container">
+    <p class="section-eyebrow reveal">Competencies</p>
+    <h2 class="section-title reveal delay-1">Skills & Expertise</h2>
+    <div class="rule reveal delay-2"></div>
+    <div class="skills-grid">
+      <div class="skill-group reveal delay-1">
+        <div class="skill-group-title">Research & Analysis</div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Qualitative Framing Analysis</span><span class="skill-pct">92%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-pct="92"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Quantitative Research (SPSS)</span><span class="skill-pct">85%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Statistical Analysis (t-tests)</span><span class="skill-pct">80%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Data Visualization</span><span class="skill-pct">78%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-pct="78"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Audience Analysis</span><span class="skill-pct">90%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
+        </div>
+      </div>
+      <div class="skill-group reveal delay-2">
+        <div class="skill-group-title">Creative & Campaign</div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Brand Storytelling</span><span class="skill-pct">88%</span></div>
+          <div class="skill-track"><div class="skill-fill gold" data-pct="88"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Advertising Copywriting</span><span class="skill-pct">85%</span></div>
+          <div class="skill-track"><div class="skill-fill gold" data-pct="85"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Graphic Ad Design</span><span class="skill-pct">75%</span></div>
+          <div class="skill-track"><div class="skill-fill gold" data-pct="75"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Digital Narrative Design</span><span class="skill-pct">82%</span></div>
+          <div class="skill-track"><div class="skill-fill gold" data-pct="82"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Video Campaign Concept</span><span class="skill-pct">79%</span></div>
+          <div class="skill-track"><div class="skill-fill gold" data-pct="79"></div></div>
+        </div>
+      </div>
+      <div class="skill-group reveal delay-3">
+        <div class="skill-group-title">Communication</div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Persuasive Writing</span><span class="skill-pct">95%</span></div>
+          <div class="skill-track"><div class="skill-fill sage" data-pct="95"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Scholarly Writing</span><span class="skill-pct">93%</span></div>
+          <div class="skill-track"><div class="skill-fill sage" data-pct="93"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Structured Presentation</span><span class="skill-pct">84%</span></div>
+          <div class="skill-track"><div class="skill-fill sage" data-pct="84"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Intentional Messaging</span><span class="skill-pct">96%</span></div>
+          <div class="skill-track"><div class="skill-fill sage" data-pct="96"></div></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-name"><span>Team Collaboration</span><span class="skill-pct">81%</span></div>
+          <div class="skill-track"><div class="skill-fill sage" data-pct="81"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL STATEMENT -->
+<section class="statement-section" id="statement" aria-label="Personal statement">
+  <div class="statement-inner">
+    <p class="section-eyebrow reveal" style="color:rgba(201,153,58,0.7);">Personal Statement</p>
+    <h2 class="section-title reveal delay-1" style="color:white;margin-bottom:2.5rem;">In My Own Words</h2>
+    <div class="statement-body reveal delay-2">
+      <p>I am a graduating senior who will hold a Bachelor of Arts Degree in Communication in May 2026, and I developed this entire portfolio with one belief: <em>my brain is not broken to work around—it is a lens that focuses everything I produce.</em></p>
+      <p>Being an autistic professional, I have been taught to speak with a degree of accuracy, deliberateness, and structural attention to detail, which I have come to realize is one of my most significant competitive advantages. This commitment has earned me several consecutive Dean's List awards, a four-year New Haven Promise Scholarship, membership in the Communications National Honor Society, and an upcoming Academic Award at my university Senior Awards Night.</p>
+      <p>The work I wrote on the representation of autism in movies was selected to be presented at the undergraduate conference of the Eastern Communication Association—proof that a subjective approach to an issue can produce scholarship that is heard long after the classroom.</p>
+      <p>Outside of academics, I mentor neurodivergent teens and young children in my community, raise money for charity to support families in the Philippines, and have applied a lifelong passion in music as a flutist and keyboardist in the All City Honors Band—a creative sensibility that permeates all my work.</p>
+      <p>I want to be on an advertising or marketing communications team of a company that truly appreciates cognitive diversity, since I offer something uncommon: the capability to fluidly cross between rigorous data analysis, conceptual creative campaigns, and emotionally engaging storytelling—all informed by a viewpoint that is genuinely underrepresented in the field.</p>
+      <p class="highlight">My portfolio does not merely represent a set of assignments. It is proof that neurodivergent professionals are not merely compatible with great communications teams—we create them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio-section" id="portfolio" aria-label="Portfolio works">
+  <div class="container">
+    <p class="section-eyebrow reveal">Selected Works</p>
+    <h2 class="section-title reveal delay-1">Portfolio</h2>
+    <p class="section-sub reveal delay-2">Five pieces that together tell the full story — scholar, storyteller, analyst, advocate, and creative communicator.</p>
+
+    <div class="portfolio-filter reveal delay-3" role="group" aria-label="Filter portfolio">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="research">Research</button>
+      <button class="filter-btn" data-filter="creative">Creative</button>
+      <button class="filter-btn" data-filter="campaign">Campaign</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolio-grid">
+
+      <div class="p-card span-7 reveal" data-category="research" onclick="openLightbox('lb1')">
+        <div class="card-color-bar bar-1"></div>
+        <div class="card-inner">
+          <div class="card-num">01 · Academic Research</div>
+          <h3 class="card-title">Portrayal of Autism in Film: A Framing Analysis of <em>Temple Grandin</em> (2010)</h3>
+          <div class="card-context">ECA Undergraduate Conference · Pittsburgh, PA · April 2026</div>
+          <p class="card-desc">A rigorous qualitative framing analysis examining how autism is portrayed through cinematic technique—sensory overload sequences, social negotiation scenes, and cultural framing. My abstract was accepted for presentation at the Eastern Communication Association undergraduate conference in April 2026, proving that lived experience can produce scholarship heard outside the classroom.</p>
+          <div class="card-tags">
+            <span class="tag">Framing Theory</span><span class="tag">Qualitative Analysis</span>
+            <span class="tag">Media Studies</span><span class="tag">Scholarly Writing</span>
+          </div>
+          <div class="card-arrow">Read More →</div>
+        </div>
+      </div>
+
+      <div class="p-card span-5 reveal delay-1" data-category="creative" onclick="openLightbox('lb2')">
+        <div class="card-color-bar bar-2"></div>
+        <div class="card-inner">
+          <div class="card-num">02 · Creative Design</div>
+          <h3 class="card-title">Finding Home — Interactive Digital Narrative Game</h3>
+          <div class="card-context">Digital Game Design Course · Published on itch.io · Grade: A</div>
+          <p class="card-desc">A symbolic navigation game metaphorically mapping an autistic person's journey through adversity toward community and identity. Released on itch.io; earned a final grade of A.</p>
+          <div class="card-tags">
+            <span class="tag">Game Design</span><span class="tag">Digital Narrative</span>
+            <span class="tag">itch.io</span><span class="tag">Metaphorical Storytelling</span>
+          </div>
+          <div class="card-arrow">Read More →</div>
+        </div>
+      </div>
+
+      <div class="p-card span-4 reveal" data-category="research" onclick="openLightbox('lb3')">
+        <div class="card-color-bar bar-3"></div>
+        <div class="card-inner">
+          <div class="card-num">03 · Quantitative Research</div>
+          <h3 class="card-title">Star Wars Demographic Preference Study</h3>
+          <div class="card-context">Applied Research Methods · Team Project</div>
+          <p class="card-desc">Led quantitative analysis using SPSS, running t-tests and correlation studies across trilogy preferences by viewer demographic. Produced original data visualizations.</p>
+          <div class="card-tags">
+            <span class="tag">SPSS</span><span class="tag">T-Tests</span>
+            <span class="tag">Data Visualization</span>
+          </div>
+          <div class="card-arrow">Read More →</div>
+        </div>
+      </div>
+
+      <div class="p-card span-8 reveal delay-1" data-category="campaign" onclick="openLightbox('lb4')">
+        <div class="card-color-bar bar-4"></div>
+        <div class="card-inner">
+          <div class="card-num">04 · Advertising Campaign</div>
+          <h3 class="card-title">"Different Minds, Shared Innovation" — Amazon Neurodiversity Campaign</h3>
+          <div class="card-context">Original Multi-Component Advertising Campaign · 2025–2026</div>
+          <p class="card-desc">A multi-component advertising campaign positioning Amazon as a genuinely neurodiversity-friendly employer. Combines original graphic ads, research-backed messaging, and an original background music composition—developed from lived authority as an autistic professional. Demonstrates the ability to merge visual communication design, brand storytelling, and persuasion theory into a campaign-ready deliverable.</p>
+          <div class="card-tags">
+            <span class="tag">Advertising Copy</span><span class="tag">Brand Storytelling</span>
+            <span class="tag">Graphic Design</span><span class="tag">Persuasion Theory</span><span class="tag">Music Composition</span>
+          </div>
+          <div class="card-arrow">Read More →</div>
+        </div>
+      </div>
+
+      <div class="p-card span-12 reveal delay-2" data-category="campaign" onclick="openLightbox('lb5')">
+        <div class="card-color-bar bar-5"></div>
+        <div class="card-inner">
+          <div class="card-num">05 · Poetry & Video Campaign</div>
+          <h3 class="card-title">"Engage and Transform" — Pass It On Values Campaign</h3>
+          <div class="card-context">Original Poem + Video Advertising Campaign · Pass It On Initiative · 2025–2026</div>
+          <p class="card-desc">An original poem written in the voice of an autistic college senior, formatted for a two-minute social media video with superimposed personal photographs and text overlays. The poem moves from isolation and self-doubt to pride, community, and a call to perseverance—closing with the campaign tagline: <em>Perseverance… Pass It On.</em> Every line break is intentional; every stanza transition is a tonal shift. This piece transforms structured, deliberate communication into advertising that moves people.</p>
+          <div class="card-tags">
+            <span class="tag">Original Poetry</span><span class="tag">Video Campaign</span>
+            <span class="tag">Emotional Pacing</span><span class="tag">Audience Analysis</span>
+            <span class="tag">Values-Based Branding</span><span class="tag">Social Media</span>
+          </div>
+          <div class="card-arrow">Read Full Poem →</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- POEM -->
+<section class="poem-section" id="poem" aria-label="Original poem">
+  <div class="container">
+    <div class="poem-header reveal">
+      <p class="section-eyebrow" style="color:rgba(201,153,58,0.7);justify-content:center;">Original Creative Work</p>
+      <h2 class="section-title" style="color:white;text-align:center;">Pass It On Campaign Poem</h2>
+    </div>
+    <div class="poem-grid">
+      <div class="reveal-left">
+        <p class="section-eyebrow" style="color:rgba(201,153,58,0.7);">Artist's Note</p>
+        <div class="poem-context">
+          <p>Written as the centerpiece of my <em>Pass It On</em> values campaign, this original poem speaks in the first person of an autistic college senior graduating in spring 2026.</p>
+          <p>It is formatted for a two-minute video presentation, paired with personal photographs and text overlays. The structure is intentional: seven stanzas move from confusion and self-doubt through resilience, community, and a call to action.</p>
+          <p>Every line break is a breath. Every stanza transition is a tonal shift designed to earn the final tagline before it arrives.</p>
+          <div class="poem-note">
+            <strong>A note on voice:</strong> I chose not to voice-record this poem. Alongside being autistic, I was born with shortened tongue muscles, which makes clear speech a challenge—though I have completed oral presentations before. Writing is where I communicate with the most precision and power.
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="poem-book">
+          <div class="poem-book-title">Engage and Transform</div>
+          <div class="stanza">
+            Between these walls of learning, I carved my space,<br/>
+            Dog-eared pages, stubborn hope, an unsteady grace.<br/>
+            A world of color, noise, and spinning light—<br/>
+            Some mornings I just asked myself: is this worth the fight?
+          </div>
+          <div class="stanza">
+            Lectures moved like rivers, tests rose like walls,<br/>
+            I tripped on the transitions, stumbled down the halls.<br/>
+            But falling taught me something textbooks never could:<br/>
+            that rising, even slowly, counts as something good.
+          </div>
+          <div class="stanza">
+            The chaos had a rhythm once I learned its name,<br/>
+            not a flaw to fix—just a different kind of flame.<br/>
+            I stopped rehearsing silence. I let my voice ring out,<br/>
+            and found that it was sharper for surviving all the doubt.
+          </div>
+          <div class="stanza">
+            I built my circle slowly—quality, not size—<br/>
+            people who could see me past the mask behind my eyes.<br/>
+            We traded laughs and late nights, traded struggle and repair,<br/>
+            proof that belonging isn't given; it's grown by those who dare.
+          </div>
+          <div class="stanza">
+            And still I kept on turning every hard page to the next,<br/>
+            not for any grade point, but for something I had wexed—<br/>
+            a knowing in my chest that I belonged in every room,<br/>
+            that my wiring, wide and tangled, was also how I bloom.
+          </div>
+          <div class="stanza">
+            So here I walk across this stage, diploma in my hand,<br/>
+            not despite the way my brain is built—because of how I'm planned.<br/>
+            Autism shaped the artist, the thinker, and the drive,<br/>
+            but I am every story that I chose to keep alive.
+          </div>
+          <div class="stanza">
+            To every dreamer wired different, reading this today:<br/>
+            the path is rough, the journey long—walk it anyway.<br/>
+            What got you here will carry you; your difference is your light.
+          </div>
+          <div class="poem-tagline">Perseverance…… Pass It On.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards-section" id="awards" aria-label="Awards and credentials">
+  <div class="container">
+    <p class="section-eyebrow reveal">Recognition</p>
+    <h2 class="section-title reveal delay-1">Awards & Credentials</h2>
+    <div class="rule reveal delay-2"></div>
+    <div class="awards-grid">
+      <div class="award-card reveal delay-1">
+        <span class="award-icon">🏆</span>
+        <div class="award-title">Dean's List</div>
+        <div class="award-org">UConn Stamford</div>
+        <div class="award-year">Fall 2022, Fall 2024 (multiple semesters)</div>
+      </div>
+      <div class="award-card reveal delay-2">
+        <span class="award-icon">💰</span>
+        <div class="award-title">New Haven Promise Scholarship</div>
+        <div class="award-org">New Haven Promise</div>
+        <div class="award-year">Full four-year merit scholarship</div>
+      </div>
+      <div class="award-card reveal delay-3">
+        <span class="award-icon">📋</span>
+        <div class="award-title">Lambda Pi Eta Inductee</div>
+        <div class="award-org">Communications National Honor Society</div>
+        <div class="award-year">Alpha Epsilon Delta Chapter</div>
+      </div>
+      <div class="award-card reveal delay-4">
+        <span class="award-icon">🎤</span>
+        <div class="award-title">ECA Conference Presenter</div>
+        <div class="award-org">Eastern Communication Association</div>
+        <div class="award-year">Undergraduate Conference · April 2026</div>
+      </div>
+      <div class="award-card reveal delay-5">
+        <span class="award-icon">🌟</span>
+        <div class="award-title">Academic Award</div>
+        <div class="award-org">UConn Stamford Senior Awards</div>
+        <div class="award-year">Spring 2026</div>
+      </div>
+      <div class="award-card reveal delay-1">
+        <span class="award-icon">🎵</span>
+        <div class="award-title">All City Honors Band</div>
+        <div class="award-org">New Haven, CT</div>
+        <div class="award-year">Flute & Keyboards · Ongoing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="testimonials" aria-label="Testimonials">
+  <div class="container">
+    <p class="section-eyebrow reveal">What Others Say</p>
+    <h2 class="section-title reveal delay-1">Testimonials</h2>
+    <div class="rule reveal delay-2"></div>
+    <div class="testimonials-grid">
+      <div class="testi-card reveal delay-1">
+        <span class="testi-quote">"</span>
+        <p class="testi-text">Bianca's research on autism representation in media is among the most thoughtful and methodologically sound work I have encountered in undergraduate scholarship. Her ability to combine personal insight with academic rigor is exceptional.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">PR</div>
+          <div>
+            <div class="testi-name">Professor — Communication Department</div>
+            <div class="testi-role">University of Connecticut, Stamford</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal delay-2">
+        <span class="testi-quote">"</span>
+        <p class="testi-text">Bianca brings a rare combination of creativity, analytical precision, and authentic storytelling to everything she touches. Her campaign work demonstrates genuine professional readiness for the advertising industry.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">CM</div>
+          <div>
+            <div class="testi-name">Course Instructor — Digital Game Design</div>
+            <div class="testi-role">University of Connecticut, Stamford</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal delay-3">
+        <span class="testi-quote">"</span>
+        <p class="testi-text">As a mentee advocate, Bianca has shown the neurodivergent teens she works with that college and career success are achievable. Her commitment to community impact is as powerful as her academic accomplishments.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">CC</div>
+          <div>
+            <div class="testi-name">Community Coordinator</div>
+            <div class="testi-role">Compadres and Comadres · New Haven, CT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section class="resume-section" id="resume" aria-label="Resume">
+  <div class="container">
+    <p class="section-eyebrow reveal">Curriculum Vitae</p>
+    <h2 class="section-title reveal delay-1" style="margin-bottom:2.5rem;">Résumé</h2>
+
+    <div class="resume-wrap reveal delay-2">
+      <div class="resume-hd">
+        <div class="resume-hd-name">Bianca Hilario</div>
+        <div class="resume-hd-contact">New Haven, Connecticut &nbsp;·&nbsp; 203-623-9125 &nbsp;·&nbsp; <a href="mailto:bianca.hilario@uconn.edu">bianca.hilario@uconn.edu</a></div>
+        <div class="resume-hd-contact"><a href="#">Bianca Hilario | LinkedIn</a></div>
+        <div class="resume-tagline">Communication Professional &nbsp;·&nbsp; Advertising &amp; Marketing &nbsp;·&nbsp; Neurodiversity Advocate</div>
+      </div>
+      <div class="resume-body">
+
+        <div class="r-section">
+          <div class="r-head">Education</div>
+          <div class="r-item">
+            <div class="r-title">Bachelor of Arts in Communication <span class="r-year">May 2026</span></div>
+            <div class="r-sub">University of Connecticut, Stamford, Connecticut</div>
+            <div class="r-detail">New Haven Promise Scholarship — Full four-year merit scholarship &nbsp;·&nbsp; Dean's List — Fall 2022, Fall 2024 &nbsp;·&nbsp; Lambda Pi Eta, Alpha Epsilon Delta Chapter — Communications National Honor Society &nbsp;·&nbsp; Academic Award Recipient — Senior Awards Night, Spring 2026<br/>Relevant coursework: Applied Research Methods in Communication · Introduction to Digital Game Design · Media Framing &amp; Representation · Persuasion &amp; Audience Analysis</div>
+          </div>
+          <div class="r-item">
+            <div class="r-title">High School Diploma — High Honors <span class="r-year">2017</span></div>
+            <div class="r-sub">Wilbur Cross High School, New Haven, CT</div>
+            <div class="r-detail">National Honor Society · National Honor Society of Torch and Laurel · National Society of High School Scholars &nbsp;·&nbsp; All City Honors Band — Flute &amp; Keyboards</div>
+          </div>
+        </div>
+
+        <div class="r-section">
+          <div class="r-head">Core Competencies</div>
+          <div class="r-comp-grid">
+            <div class="r-comp-item">Quantitative Research (SPSS, t-tests)</div>
+            <div class="r-comp-item">Qualitative Framing Analysis</div>
+            <div class="r-comp-item">Data Visualization</div>
+            <div class="r-comp-item">Audience Analysis</div>
+            <div class="r-comp-item">Brand Storytelling</div>
+            <div class="r-comp-item">Advertising Copywriting</div>
+            <div class="r-comp-item">Graphic Ad Design</div>
+            <div class="r-comp-item">Digital Narrative Design (itch.io)</div>
+            <div class="r-comp-item">Persuasive Writing</div>
+            <div class="r-comp-item">Scholarly Writing</div>
+            <div class="r-comp-item">Structured Verbal Presentation</div>
+            <div class="r-comp-item">Intentional Messaging</div>
+          </div>
+        </div>
+
+        <div class="r-section">
+          <div class="r-head">Selected Projects</div>
+          <div class="r-proj">
+            <div class="r-proj-name">Framing Analysis: Portrayal of Autism in Film <span class="r-year">2025–2026</span></div>
+            <div class="r-proj-detail">ECA Undergraduate Conference · Pittsburgh, PA — Conducted qualitative framing analysis of <em>Temple Grandin</em> (2010); abstract accepted and to be presented at ECA Undergraduate Conference, April 2026. Merged lived autistic experience with academic media theory at a peer-reviewed conference.</div>
+          </div>
+          <div class="r-proj">
+            <div class="r-proj-name">Finding Home — Interactive Digital Narrative Game <span class="r-year">Fall 2024</span></div>
+            <div class="r-proj-detail">Introduction to Digital Game Design — Created and produced a symbolic navigation game tracing the path of an autistic individual toward community and identity; released on itch.io. Developed design thinking, metaphorical storytelling, and digital prototyping skills. Grade: A.</div>
+          </div>
+          <div class="r-proj">
+            <div class="r-proj-name">Star Wars Demographic Preference Study <span class="r-year">Summer 2025</span></div>
+            <div class="r-proj-detail">Applied Research Methods in Communication — Conducted quantitative data analysis with SPSS, performed t-tests, and interpreted correlation between viewer age and trilogy preference. Produced original data visualizations for a general audience.</div>
+          </div>
+          <div class="r-proj">
+            <div class="r-proj-name">"Different Minds, Shared Innovation" — Amazon Neurodiversity Ad Campaign <span class="r-year">2025–2026</span></div>
+            <div class="r-proj-detail">Created a multi-component advertising campaign promoting Amazon as a neurodiversity-friendly employer; combined original graphic design, research-based messaging, and music composition.</div>
+          </div>
+          <div class="r-proj">
+            <div class="r-proj-name">"Engage and Transform" — Pass It On Values Campaign <span class="r-year">2025–2026</span></div>
+            <div class="r-proj-detail">Wrote original poem and created video-based advertising campaign targeting neurodivergent young adults; incorporated persuasion theory, audience analysis, and personal narrative.</div>
+          </div>
+        </div>
+
+        <div class="r-section">
+          <div class="r-head">Leadership &amp; Community Involvement</div>
+          <div class="r-item">
+            <div class="r-title">Neurodiversity Mentor <span class="r-year">Ongoing</span></div>
+            <div class="r-sub">Compadres and Comadres · New Haven, CT</div>
+            <div class="r-detail">Mentor neurodivergent teens and young children, promoting academic performance and autonomy. Share personal experience as an autistic college graduate to encourage others to pursue higher education and careers.</div>
+          </div>
+          <div class="r-item">
+            <div class="r-title">Charitable Fundraising Volunteer <span class="r-year">Ongoing</span></div>
+            <div class="r-sub">Good Samaritan Helping Hands Project · Philippines / Baguio City</div>
+            <div class="r-detail">Fundraise in support of indigent families in the Philippines; personal connection through family heritage.</div>
+          </div>
+          <div class="r-item">
+            <div class="r-title">Flutist &amp; Keyboardist <span class="r-year">Ongoing</span></div>
+            <div class="r-sub">All City Honors Band · New Haven, CT</div>
+            <div class="r-detail">Selected for citywide honors ensemble; developed discipline, teamwork, and creative expression through music.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="download-wrap reveal">
+      <a href="#" class="btn-primary" onclick="window.print();return false;" style="display:inline-flex;margin-top:1rem;">
+        ⬇ Download Résumé (PDF)
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact" aria-label="Contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left reveal-left">
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2 class="section-title">Let's Work<br/>Together</h2>
+        <div class="rule" style="background:rgba(245,240,232,0.3);"></div>
+        <p class="section-sub">I'm actively seeking advertising and marketing communications opportunities with organizations that value cognitive diversity.</p>
+        <div class="contact-links">
+          <a href="mailto:bianca.hilario@uconn.edu" class="contact-link">
+            <span class="contact-link-icon">✉</span>
+            <div>
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-val">bianca.hilario@uconn.edu</div>
+            </div>
+          </a>
+          <a href="tel:2036239125" class="contact-link">
+            <span class="contact-link-icon">📞</span>
+            <div>
+              <div class="contact-link-label">Phone</div>
+              <div class="contact-link-val">203-623-9125</div>
+            </div>
+          </a>
+          <a href="#" class="contact-link">
+            <span class="contact-link-icon">🔗</span>
+            <div>
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-val">Bianca Hilario</div>
+            </div>
+          </a>
+          <a href="#" class="contact-link">
+            <span class="contact-link-icon">📍</span>
+            <div>
+              <div class="contact-link-label">Location</div>
+              <div class="contact-link-val">New Haven, Connecticut</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right reveal-right">
+        <p class="section-eyebrow" style="color:rgba(245,240,232,0.6);">Send a Message</p>
+        <div class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="f-name">Name</label>
+              <input class="form-input" id="f-name" type="text" placeholder="Your name" autocomplete="name"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-email">Email</label>
+              <input class="form-input" id="f-email" type="email" placeholder="your@email.com" autocomplete="email"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-subject">Subject</label>
+            <input class="form-input" id="f-subject" type="text" placeholder="Opportunity, collaboration, etc."/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-message">Message</label>
+            <textarea class="form-textarea" id="f-message" placeholder="Tell me about the opportunity or how I can help…"></textarea>
+          </div>
+          <button class="form-submit" onclick="handleFormSubmit()">Send Message →</button>
+        </div>
+        <div class="form-success" id="form-success">
+          <div style="font-size:2rem;margin-bottom:0.75rem;">✓</div>
+          <div style="font-weight:600;margin-bottom:0.5rem;">Message received!</div>
+          <div>Thank you for reaching out. I'll respond within 2 business days.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGE STRIP -->
+<div class="lang-strip" aria-label="Available languages">
+  <div class="lang-strip-label">This portfolio is accessible in the following languages</div>
+  <div class="lang-badges">
+    <span class="lang-badge">🇺🇸 English</span>
+    <span class="lang-badge">🇪🇸 Español</span>
+    <span class="lang-badge">🇫🇷 Français</span>
+    <span class="lang-badge">🇩🇪 Deutsch</span>
+    <span class="lang-badge">🇮🇹 Italiano</span>
+    <span class="lang-badge">🇵🇹 Português</span>
+    <span class="lang-badge">🇯🇵 日本語</span>
+    <span class="lang-badge">🇨🇳 中文</span>
+    <span class="lang-badge">🇰🇷 한국어</span>
+    <span class="lang-badge">🇸🇦 العربية</span>
+    <span class="lang-badge">🇮🇳 हिन्दी</span>
+    <span class="lang-badge">🇷🇺 Русский</span>
+    <span class="lang-badge">🇳🇱 Nederlands</span>
+    <span class="lang-badge">🇵🇭 Filipino</span>
+    <span class="lang-badge">🇸🇪 Svenska</span>
+    <span class="lang-badge">🇵🇱 Polski</span>
+    <span class="lang-badge">🇹🇷 Türkçe</span>
+    <span class="lang-badge">🇬🇷 Ελληνικά</span>
+    <span class="lang-badge">🇮🇩 Bahasa Indonesia</span>
+    <span class="lang-badge">🇻🇳 Tiếng Việt</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Bianca Hilario &nbsp;·&nbsp; B.A. Communication, University of Connecticut Stamford &nbsp;·&nbsp; All Rights Reserved</p>
+  <p style="margin-top:0.4rem;"><a href="mailto:bianca.hilario@uconn.edu">bianca.hilario@uconn.edu</a> &nbsp;·&nbsp; <a href="tel:2036239125">203-623-9125</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></p>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- LIGHTBOXES -->
+<div class="lightbox" id="lb1" onclick="closeLightbox(event,'lb1')">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="document.getElementById('lb1').classList.remove('open')">&times;</button>
+    <p style="color:var(--sienna);font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">01 · Academic Research</p>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;margin-bottom:0.5rem;">Portrayal of Autism in Film: A Framing Analysis of <em>Temple Grandin</em> (2010)</h3>
+    <p style="color:var(--sage);font-size:0.82rem;margin-bottom:1.5rem;">ECA Undergraduate Conference · Pittsburgh, PA · April 2026</p>
+    <p style="font-size:0.95rem;line-height:1.85;color:var(--text-muted);margin-bottom:1rem;">A rigorous qualitative framing analysis examining how autism is portrayed in the 2010 biopic through cinematic technique—sensory overload sequences, social negotiation scenes, and cultural framing decisions. My professor selected the paper for submission; the abstract was subsequently accepted for presentation at the Eastern Communication Association undergraduate conference.</p>
+    <p style="font-size:0.95rem;line-height:1.85;color:var(--text-muted);margin-bottom:1rem;">This piece demonstrates my ability to translate lived experience into scholarship that is heard outside the classroom—combining personal knowledge as an autistic adult with media theory to produce analysis that is both methodologically sound and culturally meaningful.</p>
+    <p style="font-size:0.95rem;line-height:1.85;color:var(--text-muted);">Key skills: qualitative framing analysis, critical thinking, persuasive scholarly writing, APA methodology, media representation theory.</p>
+  </div>
+</div>
+
+<div class="lightbox" id="lb2" onclick="closeLightbox(event,'lb2')">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="document.getElementById('lb2').classList.remove('open')">&times;</button>
+    <p style="color:var(--sienna);font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">02 · Creative Design</p>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;margin-bottom:0.5rem;">Finding Home — Interactive Digital Narrative Game</h3>
+    <p style="color:var(--sage);font-size:0.82rem;margin-bottom:1.5rem;">Introduction to Digital Game Design · Published on itch.io · Grade: A</p>
+    <p style="font-size:0.95rem;line-height:1.85;color:var(--text-muted);margin-bottom:1rem;">A symbolic navigation game that metaphorically maps the journey of an autistic person navigating adversity toward community and identity. The dark forest represents social confusion; clearings represent belonging and self-discovery. Built and released on itch.io.</p>
+    <p style="font-size:0.95rem;line-height:1.85;color:var(--text-muted);">This piece proves I can acquire new technical tools rapidly, encode abstract emotional concepts into interactive experiences, and tell non-linear stories through digital design thinking. Final grade: A.</p>
+  </div>
+</div>
+
+<div class="lightbox" id="lb3" onclick="closeLightbox(event,'lb3')">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="document.getElementById('lb3').classList.remove('open')">&times;</button>
+    <p style="color:var(--sienna);font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">03 · Quantitative Research</p>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;margin-bottom:0.5rem;">Star Wars Demographic Preference Study</h3>
+    <p style="color:var(--sage);font-size:0.82rem;margin-bottom:1.5rem;">Applied Research Methods in Communication — Team Project</p>
+    <p style="font-size:0.95rem;line-height:1.85;color:var(--text-muted);margin-bottom:1rem;">An applied quantitative research project examining demographic preferences across the Star Wars film trilogies. I led the data analysis: managing the SPSS dataset, running statistical t-tests, calculating correlations between viewer age and trilogy preference, and producing original data visualizations to communicate findings to a general audience.</p>
+    <p style="font-size:0.95rem;line-height:1.85;color:var(--text-muted);">Key skills: SPSS, t-tests, data visualization, audience analysis, team research, communicating statistical findings to non-technical audiences.</p>
+  </div>
+</div>
+
+<div class="lightbox" id="lb4" onclick="closeLightbox(event,'lb4')">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="document.getElementById('lb4').classList.remove('open')">&times;</button>
+    <p style="color:var(--sienna);font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">04 · Advertising Campaign</p>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;margin-bottom:0.5rem;">"Different Minds, Shared Innovation" — Amazon Neurodiversity Campaign</h3>
+    <p style="color:var(--sage);font-size:0.82rem;margin-bottom:1.5rem;">Original Multi-Component Advertising Campaign · 2025–2026</p>
+    <p style="font-size:0.95rem;line-height:1.85;color:var(--text-muted);margin-bottom:1rem;">A multi-component advertising campaign positioning Amazon as a genuinely neurodiversity-friendly employer. Combines original graphic ads, research-backed messaging grounded in Cope & Remington (2022), and an original background music composition.</p>
+    <p style="font-size:0.95rem;line-height:1.85;color:var(--text-muted);">Developed from lived authority as an autistic professional, this piece demonstrates the ability to merge visual communication design, brand storytelling, and persuasion theory into a polished, campaign-ready deliverable—the kind of work entry-level advertising employers expect to see.</p>
+  </div>
+</div>
+
+<div class="lightbox" id="lb5" onclick="closeLightbox(event,'lb5')">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="document.getElementById('lb5').classList.remove('open')">&times;</button>
+    <p style="color:var(--sienna);font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;">05 · Poetry & Video Campaign</p>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;margin-bottom:0.5rem;">"Engage and Transform" — Pass It On Values Campaign</h3>
+    <p style="color:var(--sage);font-size:0.82rem;margin-bottom:1.5rem;">Original Poem + Video Advertising Campaign · 2025–2026</p>
+    <p style="font-size:0.95rem;line-height:1.85;color:var(--text-muted);margin-bottom:1rem;">An original poem written in the voice of an autistic college senior, formatted for a two-minute social media video with superimposed personal photographs and text overlays. The poem moves from isolation and self-doubt through resilience, community, and a call to perseverance.</p>
+    <p style="font-size:0.95rem;line-height:1.85;color:var(--text-muted);margin-bottom:1rem;">Every line break is a breath. Every stanza transition is a deliberate tonal shift. This piece transforms structural intentionality—my defining strength as an autistic communicator—into advertising that moves people. The closing tagline, <em>Perseverance… Pass It On</em>, only lands after seven stanzas have earned it.</p>
+    <p style="font-size:0.95rem;line-height:1.85;color:var(--text-muted);">See the full poem in the Poem section above.</p>
+  </div>
+</div>
+
+<script>
+// ── READING PROGRESS
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  progressBar.style.width = Math.round((scrollTop / scrollHeight) * 100) + '%';
+});
+
+// ── NAV SCROLL EFFECTS + ACTIVE LINK
+const nav = document.getElementById('main-nav');
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 30);
+  
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+
+  document.getElementById('back-to-top').classList.toggle('visible', window.scrollY > 400);
+});
+
+// ── DARK MODE
+const themeBtn = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+themeBtn.textContent = savedTheme === 'dark' ? '☀' : '🌙';
+
+themeBtn.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  themeBtn.textContent = next === 'dark' ? '☀' : '🌙';
+});
+
+// ── HAMBURGER
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', open);
+});
+function closeMobileMenu() { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded', false); }
+
+// ── SCROLL REVEAL
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // Animate skill bars
+      e.target.querySelectorAll('.skill-fill[data-pct]').forEach(bar => {
+        bar.style.width = bar.dataset.pct + '%';
+      });
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+// Also observe skill bars standalone
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.skill-fill[data-pct]').forEach(bar => {
+        bar.style.width = bar.dataset.pct + '%';
+      });
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.skills-grid').forEach(el => skillObserver.observe(el));
+
+// ── PORTFOLIO FILTER
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.p-card').forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.style.display = 'flex';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(16px)';
+        setTimeout(() => { card.style.transition = 'opacity 0.4s,transform 0.4s'; card.style.opacity = '1'; card.style.transform = 'none'; }, 10);
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// ── LIGHTBOX
+function openLightbox(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e, id) {
+  if (e.target === e.currentTarget) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+document.querySelectorAll('.lightbox-close').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.lightbox.open').forEach(lb => lb.classList.remove('open'));
+    document.body.style.overflow = '';
+  }
+});
+
+// ── CONTACT FORM
+function handleFormSubmit() {
+  const name = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  if (!name || !email) { alert('Please fill in your name and email.'); return; }
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
